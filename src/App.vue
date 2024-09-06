@@ -3,10 +3,10 @@
     <TheNavBar />
     <v-main>
       <div class="wrapper">
-        <HelloWorld msg="You did it!" />
         <RouterView />
       </div>
     </v-main>
+    <TheFooter />
   </v-app>
 </template>
 
@@ -21,6 +21,6 @@
 }
 </style>
 <script setup lang="ts">
-import HelloWorld from './components/HelloWorld.vue'
 import TheNavBar from './components/TheNavBar.vue'
+import TheFooter from './components/TheFooter.vue'
 </script>
