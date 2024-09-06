@@ -18,6 +18,7 @@
         </v-list-item>
       </v-list>
     </v-menu>
+    <v-btn to="/contact">Contact</v-btn>
   </v-app-bar>
 </template>
 
