@@ -1,87 +1,71 @@
 <template>
-  <form @submit.prevent="submit">
-    <v-text-field
-      v-model="name.value.value"
-      :counter="10"
-      :error-messages="name.errorMessage.value"
-      label="Name"
-    ></v-text-field>
+  <v-container>
+    <v-card-title>Let's get in touch! </v-card-title>
+    <v-form v-model="valid" @submit.prevent="submitForm">
+      <v-text-field
+        v-model="form.email"
+        label="Email Address"
+        :rules="[rules.required, rules.email]"
+        required
+      ></v-text-field>
 
-    <v-text-field
-      v-model="phone.value.value"
-      :counter="7"
-      :error-messages="phone.errorMessage.value"
-      label="Phone Number"
-    ></v-text-field>
+      <v-textarea
+        v-model="form.message"
+        label="Message"
+        :rules="[rules.required]"
+        required
+      ></v-textarea>
 
-    <v-text-field
-      v-model="email.value.value"
-      :error-messages="email.errorMessage.value"
-      label="E-mail"
-    ></v-text-field>
+      <v-btn type="submit" :disabled="!valid">Submit</v-btn>
+    </v-form>
 
-    <v-select
-      v-model="select.value.value"
-      :error-messages="select.errorMessage.value"
-      :items="items"
-      label="Select"
-    ></v-select>
+    <v-divider class="my-4"></v-divider>
 
-    <v-checkbox
-      v-model="checkbox.value.value"
-      :error-messages="checkbox.errorMessage.value"
-      label="Option"
-      type="checkbox"
-      value="1"
-    ></v-checkbox>
-
-    <v-btn class="me-4" type="submit"> submit </v-btn>
-
-    <v-btn @click="handleReset"> clear </v-btn>
-  </form>
+    <p>
+      You can also email
+      <a :href="mailtoLink">{{ emailAddress }}</a>
+      to contact me directly!
+    </p>
+  </v-container>
 </template>
-<script setup>
-import { ref } from 'vue'
-import { useField, useForm } from 'vee-validate'
 
-const { handleSubmit, handleReset } = useForm({
-  validationSchema: {
-    name(value) {
-      if (value?.length >= 2) return true
+<script lang="ts">
+import { defineComponent, ref } from 'vue'
 
-      return 'Name needs to be at least 2 characters.'
-    },
-    phone(value) {
-      if (/^[0-9-]{7,}$/.test(value)) return true
+export default defineComponent({
+  name: 'ContactForm',
+  setup() {
+    const form = ref({
+      email: '',
+      message: ''
+    })
 
-      return 'Phone number needs to be at least 7 digits.'
-    },
-    email(value) {
-      if (/^[a-z.-]+@[a-z.-]+\.[a-z]+$/i.test(value)) return true
+    const valid = ref(false)
 
-      return 'Must be a valid e-mail.'
-    },
-    select(value) {
-      if (value) return true
+    const emailAddress = 'contact@example.com' // Replace with your email address
+    const mailtoLink = `mailto:${emailAddress}?subject=Hello from mywebsite.com!`
 
-      return 'Select an item.'
-    },
-    checkbox(value) {
-      if (value === '1') return true
+    const rules = {
+      required: (value: string) => !!value || 'Required.',
+      email: (value: string) => {
+        const pattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+        return pattern.test(value) || 'Invalid email.'
+      }
+    }
 
-      return 'Must be checked.'
+    const submitForm = () => {
+      // Handle form submission logic here
+      console.log(form.value)
+    }
+
+    return {
+      form,
+      valid,
+      emailAddress,
+      mailtoLink,
+      rules,
+      submitForm
     }
   }
-})
-const name = useField('name')
-const phone = useField('phone')
-const email = useField('email')
-const select = useField('select')
-const checkbox = useField('checkbox')
-
-const items = ref(['Item 1', 'Item 2', 'Item 3', 'Item 4'])
-
-const submit = handleSubmit((values) => {
-  alert(JSON.stringify(values, null, 2))
 })
 </script>

@@ -13,11 +13,12 @@
       <v-list>
         <v-list-item v-for="(item, index) in creations" :key="index">
           <v-list-item-title
-            ><v-btn :to="item.to">{{ item.title }}</v-btn></v-list-item-title
+            ><v-btn :to="item.to" class="navlink">{{ item.title }}</v-btn></v-list-item-title
           >
         </v-list-item>
       </v-list>
     </v-menu>
+    <v-btn to="/store">Store</v-btn>
     <v-btn to="/contact">Contact</v-btn>
   </v-app-bar>
 </template>
@@ -27,10 +28,17 @@ export default {
   data: () => ({
     creations: [
       { title: 'Artwork', to: '/creations/artwork' },
-      { title: 'Beauty Products', to: '/creations/beauty' },
+      { title: 'Homemade Goods', to: 'homemade' },
       { title: 'Clothing', to: '/creations/clothing' },
-      { title: 'Limited Time', to: '/creations/jewelry' }
+      { title: 'Limited Time', to: '/creations/limited-time' },
+      { title: 'Jewelry', to: '/creations/jewelry' }
     ]
   })
 }
 </script>
+
+<style scoped>
+.navlink {
+  width: 100%;
+}
+</style>
