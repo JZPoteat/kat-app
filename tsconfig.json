@@ -7,5 +7,9 @@
     {
       "path": "./tsconfig.app.json"
     }
-  ]
+  ],
+  "include": ["./typed-router.d.ts"],
+  "compilerOptions": {
+    "types": ["unplugin-vue-router/client"]
+  }
 }
