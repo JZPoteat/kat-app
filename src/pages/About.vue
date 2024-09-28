@@ -58,6 +58,7 @@ export default {
 <style scoped>
 p {
   text-align: left;
+  margin-bottom: 10px;
 }
 .about-image {
   width: 40%;
