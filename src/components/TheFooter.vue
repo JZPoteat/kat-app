@@ -19,10 +19,14 @@
       <!-- Social Media Section -->
       <div class="social-icons">
         <h4>Follow us on Social Media</h4>
-        <v-btn icon @click="goToLink('https://instagram.com')" alt="Instagram">
+        <v-btn
+          icon
+          @click="goToLink('https://www.instagram.com/mylittlemousecreative/')"
+          alt="Instagram"
+        >
           <font-awesome-icon :icon="['fab', 'instagram']" />
         </v-btn>
-        <v-btn icon @click="goToLink('https://etsy.com')" alt="Etsy">
+        <v-btn icon @click="goToLink('https://www.etsy.com/shop/MyLittleMouseCreativ')" alt="Etsy">
           <font-awesome-icon :icon="['fab', 'etsy']" />
         </v-btn>
         <v-btn icon @click="goToLink('https://tiktok.com')" alt="TikTok">
