@@ -1,5 +1,12 @@
 <template>
   <v-container>
+    <h1>Store</h1>
+    <v-row>
+      <v-col>
+        <p>To see a full list of products please view my Etsy shop here!</p>
+        <p>I also do custom orders!</p>
+      </v-col>
+    </v-row>
     <v-row>
       <v-col v-for="product in products" :key="product.id" cols="12" sm="6" md="4">
         <v-card>

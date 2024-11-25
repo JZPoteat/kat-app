@@ -2,8 +2,8 @@
   <v-container>
     <v-row>
       <v-col cols="12">
-        <h1>Artwork Collage</h1>
-        <p>Welcome to the artwork gallery.</p>
+        <h1>Artwork</h1>
+        <p>Welcome to the artwork gallery. Click a pic for a fullscreen view!</p>
       </v-col>
       <v-row>
         <div class="collage">
