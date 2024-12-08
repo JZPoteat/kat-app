@@ -12,6 +12,12 @@
   "compilerOptions": {
     "types": ["unplugin-vue-router/client"],
     "composite": true,
-    "noEmit": false
+    "noEmit": false,
+    "target": "es2015",
+    "lib": ["ES2015", "DOM"],
+    "module": "ESNext",
+    "strict": true,
+    "moduleResolution": "node",
+    "skipLibCheck": true
   }
 }
