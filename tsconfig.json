@@ -1,23 +1,28 @@
 {
-  "files": [],
-  "references": [
-    {
-      "path": "./tsconfig.node.json"
-    },
-    {
-      "path": "./tsconfig.app.json"
-    }
-  ],
-  "include": ["./typed-router.d.ts"],
   "compilerOptions": {
-    "types": ["unplugin-vue-router/client"],
-    "composite": true,
-    "noEmit": false,
-    "target": "es2015",
-    "lib": ["ES2015", "DOM"],
-    "module": "ESNext",
+    "target": "ESNext",
+    "lib": ["ESNext", "DOM"],
+    "module": "ES2022",
     "strict": true,
     "moduleResolution": "node",
-    "skipLibCheck": true
-  }
+    "types": ["vite/client"],
+    "declaration": true, // Generate .d.ts files
+    "declarationDir": "./types", // Output declaration files to a separate folder
+    "outDir": "./dist", // Output compiled JS files here
+    "emitDeclarationOnly": true, // Only emit declaration files
+    "esModuleInterop": true, // For smoother imports
+    "skipLibCheck": true, // Skips type checking for all declaration files
+    "noEmitOnError": true // Prevent output if there are type errors
+  },
+  "include": [
+    "./src/**/*", // Include all source files
+    "./typed-router.d.ts", // Include specific type definitions if needed,
+    "env.d.ts"
+  ],
+  "exclude": [
+    "./node_modules", // Exclude node_modules
+    "./dist", // Exclude the dist folder to avoid conflicts
+    "./plugins/**/*", // Exclude plugin-related files
+    "./typings/**/*" // Exclude custom typings
+  ]
 }
