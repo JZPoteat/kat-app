@@ -8,6 +8,7 @@
     "build": "run-p type-check \"build-only {@}\" --",
     "preview": "vite preview",
     "build-only": "vite build",
+    "clean": "rm -rf dist types",
     "type-check": "vue-tsc --build --force",
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore",
     "format": "prettier --write src/"
@@ -18,6 +19,7 @@
     "@fortawesome/free-solid-svg-icons": "^6.6.0",
     "@fortawesome/vue-fontawesome": "^3.0.8",
     "@mdi/font": "^7.4.47",
+    "@types/vue-router": "^2.0.0",
     "pinia": "^2.1.7",
     "sass": "^1.78.0",
     "sass-loader": "^16.0.1",
@@ -41,7 +43,7 @@
     "npm-run-all2": "^6.2.0",
     "prettier": "^3.2.5",
     "typescript": "~5.4.0",
-    "vite": "^5.3.1",
+    "vite": "^5.4.11",
     "vue-tsc": "^2.0.21"
   }
 }
