@@ -10,6 +10,8 @@
   ],
   "include": ["./typed-router.d.ts"],
   "compilerOptions": {
-    "types": ["unplugin-vue-router/client"]
+    "types": ["unplugin-vue-router/client"],
+    "composite": true,
+    "noEmit": false
   }
 }

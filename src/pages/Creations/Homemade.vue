@@ -22,7 +22,7 @@
     <!-- Modal to display the clicked image -->
     <div v-if="showModal" class="modal-overlay" @click="closeModal">
       <div class="modal-content" @click.stop>
-        <img :src="modalImage" alt="Fullscreen homemade" />
+        <img :src="modalImage ?? ''" alt="Fullscreen homemade" />
         <button class="close-btn" @click="closeModal">Close</button>
       </div>
     </div>
@@ -39,7 +39,7 @@ export default defineComponent({
     const modalImage = ref<string | null>(null)
 
     onMounted(async () => {
-      const images = import.meta.glob('@/stores/photos/homemade/*.jpg')
+      const images = import.meta.glob<{ default: string }>('@/stores/photos/homemade/*.jpg')
 
       for (const path in images) {
         const module = await images[path]()
