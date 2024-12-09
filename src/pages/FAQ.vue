@@ -3,18 +3,13 @@
     <v-row justify="center">
       <v-col cols="12" md="8">
         <h1 class="faq-title text-left">FAQ</h1>
-
-        <v-expansion-panels>
-          <v-expansion-panel v-for="(faq, index) in faqs" :key="index" class="faq-panel text-left">
-            <v-expansion-panel-header class="faq-header mb-10">
-              <v-icon left>mdi-help-circle</v-icon>
-              {{ faq.question }}
-            </v-expansion-panel-header>
-            <br />
-            <v-expansion-panel-content class="faq-content">
-              {{ faq.answer }}
-            </v-expansion-panel-content>
-          </v-expansion-panel>
+        <v-expansion-panels class="my-4" variant="popout">
+          <v-expansion-panel
+            v-for="(faq, index) in faqs"
+            :key="index"
+            :title="faq.question"
+            :text="faq.answer"
+          ></v-expansion-panel>
         </v-expansion-panels>
       </v-col>
     </v-row>
@@ -28,6 +23,8 @@ export default defineComponent({
   name: 'FaqPage',
   data() {
     return {
+      // Empty array by default, meaning all panels will be collapsed
+      expanded: [],
       faqs: [
         {
           question: 'What types of products do you make?',

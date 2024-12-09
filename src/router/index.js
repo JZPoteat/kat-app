@@ -1,7 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import { routes, handleHotUpdate } from 'vue-router/auto-routes'
 const router = createRouter({
-  history: createWebHistory('kat-app'),
+  history: createWebHistory(''),
   routes
 })
 if (import.meta.hot) {
