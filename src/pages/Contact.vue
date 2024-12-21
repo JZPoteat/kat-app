@@ -31,6 +31,7 @@
 
 <script lang="ts">
 import { defineComponent, ref } from 'vue'
+import emailjs from 'emailjs-com'
 
 export default defineComponent({
   name: 'ContactForm',
@@ -43,7 +44,7 @@ export default defineComponent({
     const valid = ref(false)
 
     const emailAddress = 'hello@mylittlemousecreative.com' // Replace with your email address
-    const mailtoLink = `mailto:${emailAddress}?subject=Hello from mywebsite.com!`
+    const mailtoLink = `mailto:${emailAddress}?subject=Hello from mylittlemousecreative.com!`
 
     const rules = {
       required: (value: string) => !!value || 'Required.',
@@ -53,9 +54,27 @@ export default defineComponent({
       }
     }
 
+    // Send email using EmailJS
+    const sendEmail = async () => {
+      const templateParams = {
+        email: form.value.email, // User's email input
+        message: form.value.message // User's message
+      }
+
+      try {
+        // Replace these with your actual service_id, template_id, and user_id
+        // await emailjs.send() -- replace with ids but figure out how to hide them
+        alert('Message sent successfully!')
+      } catch (error) {
+        alert('Failed to send message. Please try again later.')
+      }
+    }
+
+    // Form submission handler
     const submitForm = () => {
-      // Handle form submission logic here
-      console.log(form.value)
+      if (valid.value) {
+        sendEmail()
+      }
     }
 
     return {
