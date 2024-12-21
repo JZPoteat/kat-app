@@ -51,8 +51,8 @@
 <script setup>
 const moreLinks = [
   { title: 'TikTok', url: 'https://www.tiktok.com/', isExternal: true },
-  { title: 'Instagram', url: 'https://www.instagram.com/', isExternal: true },
-  { title: 'Newsletter Signup', url: '/faq', isExternal: false }
+  { title: 'Instagram', url: 'https://www.instagram.com/mylittlemousecreative/', isExternal: true },
+  { title: 'Newsletter Signup', url: '/newslettersignup', isExternal: false }
 ]
 
 const policies = [
