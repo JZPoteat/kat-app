@@ -52,7 +52,7 @@
 
 <script setup>
 const moreLinks = [
-  { title: 'TikTok', url: 'https://www.tiktok.com/', isExternal: true },
+  { title: 'Etsy', url: 'https://www.etsy.com/shop/MyLittleMouseCreativ', isExternal: true },
   { title: 'Instagram', url: 'https://www.instagram.com/mylittlemousecreative/', isExternal: true },
   { title: 'Newsletter Signup', url: '/newslettersignup', isExternal: false }
 ]
@@ -136,6 +136,8 @@ const policies = [
 
 .footer-email {
   color: white;
+  font-size: 14px;
+
   font-weight: bold;
   text-decoration: none;
 }
