@@ -53,8 +53,7 @@
 <script setup>
 const moreLinks = [
   { title: 'Etsy', url: 'https://www.etsy.com/shop/MyLittleMouseCreativ', isExternal: true },
-  { title: 'Instagram', url: 'https://www.instagram.com/mylittlemousecreative/', isExternal: true },
-  { title: 'Newsletter Signup', url: '/newslettersignup', isExternal: false }
+  { title: 'Instagram', url: 'https://www.instagram.com/mylittlemousecreative/', isExternal: true }
 ]
 
 const policies = [

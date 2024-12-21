@@ -8,7 +8,7 @@
           <v-card-text>
             <div class="img-box">
               <img
-                src="../stores//photos/about/pfp.png"
+                src="../stores/photos/about/pfp.png"
                 alt="Front Pic"
                 class="my-4 about-image"
                 contain
