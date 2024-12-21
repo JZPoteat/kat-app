@@ -42,7 +42,7 @@ export default defineComponent({
 
     const valid = ref(false)
 
-    const emailAddress = 'mylittlemousecreative@gmail.com' // Replace with your email address
+    const emailAddress = 'hello@mylittlemousecreative.com' // Replace with your email address
     const mailtoLink = `mailto:${emailAddress}?subject=Hello from mywebsite.com!`
 
     const rules = {

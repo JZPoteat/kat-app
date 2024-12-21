@@ -32,7 +32,9 @@
       <div class="footer-contact">
         <h4 class="footer-section-title">Contact</h4>
         <p>For all inquiries, please contact:</p>
-        <a href="mailto:support@example.com" class="footer-email">support@example.com</a>
+        <a href="mailto:hello@mylittlemousecreative.com" class="footer-email"
+          >hello@mylittlemousecreative.com</a
+        >
       </div>
 
       <!-- Policies Section -->
