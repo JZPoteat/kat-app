@@ -21,8 +21,23 @@
 </template>
 
 <script lang="ts">
+import axios from 'axios'
+
 export default {
-  name: 'EtsyStoreLink'
+  name: 'EtsyStoreLink',
+  mounted() {
+    this.logApiResponse()
+  },
+  methods: {
+    async logApiResponse() {
+      try {
+        const response = await axios.get('http://localhost:8000/api/jsonplaceholder')
+        console.log('API Response:', response.data)
+      } catch (error) {
+        console.error('Error fetching data from API:', error)
+      }
+    }
+  }
 }
 </script>
 
