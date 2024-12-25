@@ -32,9 +32,12 @@
       <div class="footer-contact">
         <h4 class="footer-section-title">Contact</h4>
         <p>For all inquiries, please contact:</p>
-        <a href="mailto:hello@mylittlemousecreative.com" class="footer-email"
-          >hello@mylittlemousecreative.com</a
+        <a
+          href="mailto:hello@mylittlemousecreative.com?subject=Inquiry%20from%20mylittlemousecreative.com&body=Hello%20from%20mylittlemousecreative.com!%0D%0A%0D%0AMy%20name%20is%20[Your%20Name%20Here].%0D%0A%0D%0A"
+          class="footer-email"
         >
+          hello@mylittlemousecreative.com
+        </a>
       </div>
 
       <!-- Policies Section -->
