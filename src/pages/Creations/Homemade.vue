@@ -30,22 +30,25 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, ref, onMounted } from 'vue'
+import { defineComponent, ref } from 'vue'
 
 export default defineComponent({
   setup() {
-    const homemade = ref<string[]>([])
+    const homemade = ref<string[]>([]) // Array to store image URLs
     const showModal = ref(false)
     const modalImage = ref<string | null>(null)
 
-    onMounted(async () => {
-      const images = import.meta.glob<{ default: string }>('@/stores/photos/homemade/*.jpg')
+    // Manually load images from the `public` folder
+    const loadImages = () => {
+      homemade.value = [
+        '/images/homemade/crochet.jpg',
+        '/images/homemade/quilt.jpg',
+        '/images/homemade/quilt3.jpg'
+      ]
+    }
 
-      for (const path in images) {
-        const module = await images[path]()
-        homemade.value.push(module.default)
-      }
-    })
+    // Initialize images
+    loadImages()
 
     const openModal = (image: string) => {
       modalImage.value = image

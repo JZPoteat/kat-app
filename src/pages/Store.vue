@@ -3,7 +3,7 @@
     <v-card class="mx-auto" max-width="400" outlined>
       <v-card-title class="text-h5">Visit My Etsy Store</v-card-title>
       <v-card-subtitle>
-        <p>Click the button below to check out my Etsy Store!</p>
+        <p>Click below to check out my Etsy Store!</p>
       </v-card-subtitle>
       <v-card-actions class="justify-center">
         <v-btn

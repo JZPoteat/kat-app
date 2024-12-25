@@ -7,12 +7,7 @@
           <v-card-title> </v-card-title>
           <v-card-text>
             <div class="img-box">
-              <img
-                src="../stores/photos/about/pfp.png"
-                alt="Front Pic"
-                class="my-4 about-image"
-                contain
-              />
+              <img src="/images/about/pfp.png" alt="Front Pic" class="my-4 about-image" contain />
               <div class="img-text">
                 <h2 class="img-text-header">Hello and Welcome!</h2>
                 <p>
@@ -35,7 +30,7 @@
             </div>
             <div class="img-box">
               <img
-                src="../stores/photos/about/Jutta.jpg"
+                src="/images/about/Jutta.jpg"
                 alt="Jutta"
                 class="my-4 about-image"
                 id="jutta-img"
@@ -59,7 +54,7 @@
             </div>
             <div class="img-box">
               <img
-                src="../stores/photos/about/stunz89windsbach.jpg"
+                src="/images/about/stunz89windsbach.jpg"
                 alt="stunz89 windsbach"
                 class="my-4 about-image"
                 id="stunz-img"
@@ -77,7 +72,7 @@
             </div>
             <div class="img-box">
               <img
-                src="../stores/photos/artwork/red_flower.jpg"
+                src="/images/artwork/red_flower.jpg"
                 alt="red flower painting"
                 class="my-4 about-image"
                 id="red-flower"

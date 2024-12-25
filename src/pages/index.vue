@@ -33,9 +33,9 @@ export default defineComponent({
   setup() {
     // Sample images for the carousel
     const carouselImages = [
-      '/homepagepics/pfp.png',
-      '/homepagepics/purp_flower.jpg',
-      '/homepagepics/red_flower_black_back.jpg'
+      '/images/homepagepics/pfp.png',
+      '/images/homepagepics/purp_flower.jpg',
+      '/images/homepagepics/red_flower_black_back.jpg'
     ]
 
     const mailtoLink = `mailto:hello@mylittlemousecreative.com`

@@ -5,7 +5,7 @@
         <h1>Artwork</h1>
         <p>Welcome to the artwork gallery. Click a pic for a fullscreen view!</p>
       </v-col>
-      <v-row>
+      <v-row style="justify-content: center">
         <div class="collage">
           <div
             v-for="(image, index) in artwork"
@@ -30,22 +30,22 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, ref, onMounted } from 'vue'
+import { defineComponent, ref } from 'vue'
 
 export default defineComponent({
   setup() {
-    const artwork = ref<string[]>([])
+    const artwork = ref<string[]>([]) // Array of image URLs
     const showModal = ref(false)
     const modalImage = ref<string | null>(null)
 
-    onMounted(async () => {
-      const images = import.meta.glob<{ default: string }>('@/stores/photos/artwork/*.jpg')
+    // Manually load images from the `public` folder
+    const loadImages = () => {
+      // Manually specify image paths
+      artwork.value = ['/images/artwork/purp_flower.jpg', '/images/artwork/red_flower.jpg']
+    }
 
-      for (const path in images) {
-        const module = await images[path]()
-        artwork.value.push(module.default)
-      }
-    })
+    // Run the function immediately to populate the gallery
+    loadImages()
 
     const openModal = (image: string) => {
       modalImage.value = image
@@ -69,6 +69,8 @@ export default defineComponent({
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   grid-auto-rows: minmax(250px, auto);
   margin-top: 20px;
+  justify-content: center;
+  align-items: center;
 }
 
 .collage-item {

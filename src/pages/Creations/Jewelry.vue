@@ -30,22 +30,29 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, ref, onMounted } from 'vue'
+import { defineComponent, ref } from 'vue'
 
 export default defineComponent({
   setup() {
-    const jewelry = ref<string[]>([])
+    const jewelry = ref<string[]>([]) // Array to store jewelry image URLs
     const showModal = ref(false)
     const modalImage = ref<string | null>(null)
 
-    onMounted(async () => {
-      const images = import.meta.glob<{ default: string }>('@/stores/photos/jewelry/*.jpg')
+    // Load images from the public folder
+    const loadImages = () => {
+      jewelry.value = [
+        '/images/jewelry/blue_flower_pink_back_long.jpg',
+        '/images/jewelry/purp_flower_earring.jpg',
+        '/images/jewelry/purp_flower_pink_back.jpg',
+        '/images/jewelry/purp_flower_purp_back.jpg',
+        '/images/jewelry/red_flower_black_back.jpg',
+        '/images/jewelry/red_flower_blue_back.jpg',
+        '/images/jewelry/red_flower_purp_background.jpg'
+      ]
+    }
 
-      for (const path in images) {
-        const module = await images[path]()
-        jewelry.value.push(module.default)
-      }
-    })
+    // Call loadImages on setup
+    loadImages()
 
     const openModal = (image: string) => {
       modalImage.value = image
