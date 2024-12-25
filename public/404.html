@@ -5,7 +5,9 @@
   </head>
   <body>
     <script>
-      const pathname = window.location.pathname
+      const pathname = window.location.pathname + window.location.search + window.location.hash
+
+      // Rewrite the location to use hash-based routing, preserving the full path
       window.location.replace('/#' + pathname)
     </script>
   </body>
